@@ -19,6 +19,7 @@ export default function ChatPage() {
   const [status, setStatus] = useState<"idle" | "searching" | "connected" | "disconnected">("idle");
   const [channel, setChannel] = useState<Channel | null>(null);
   const [myId, setMyId] = useState<string>("");
+  const myIdRef = useRef<string>("");
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -34,6 +35,7 @@ export default function ChatPage() {
     // Generate a random ID for this session
     const id = Math.random().toString(36).substring(7);
     setMyId(id);
+    myIdRef.current = id;
 
     // Connect to Pusher
     pusherClient.connect();
@@ -133,7 +135,8 @@ export default function ChatPage() {
     setChannel(chatChannel);
 
     chatChannel.bind("new-message", (data: { text: string, senderId: string }) => {
-      if (data.senderId !== myId) {
+      // Use ref to check current ID, avoiding closure staleness
+      if (data.senderId !== myIdRef.current) {
         setMessages((prev) => [
           ...prev,
           { id: Date.now().toString(), text: data.text, sender: "stranger", timestamp: Date.now() },
@@ -175,7 +178,7 @@ export default function ChatPage() {
         body: JSON.stringify({
           channelName: channel.name,
           text,
-          senderId: myId,
+          senderId: myIdRef.current,
         }),
       });
     } catch (error) {
