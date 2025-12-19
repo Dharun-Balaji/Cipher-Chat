@@ -12,7 +12,7 @@ export default function Home() {
             <div className="p-3 bg-primary/10 rounded-2xl">
               <MessageSquare className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight">Cipher Chat</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Orbit</h1>
           </div>
           
           <h2 className="text-5xl sm:text-7xl font-extrabold tracking-tight bg-gradient-to-br from-white to-zinc-500 bg-clip-text text-transparent pb-2">
@@ -60,7 +60,7 @@ export default function Home() {
       </main>
       
       <footer className="absolute bottom-4 text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Cipher Chat. Built for fun.
+        © {new Date().getFullYear()} Orbit. Built for fun.
       </footer>
     </div>
   );

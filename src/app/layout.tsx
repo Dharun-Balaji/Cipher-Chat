@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cipher Chat - Talk to Strangers",
+  title: "Orbit - Talk to Strangers",
   description: "A polished, modern anonymous chat application.",
 };
 
