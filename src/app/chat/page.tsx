@@ -235,7 +235,7 @@ export default function ChatPage() {
           <div className="p-1.5 bg-primary/10 rounded-lg">
             <MessageSquare className="w-5 h-5 text-primary" />
           </div>
-          <span className="font-bold text-lg hidden sm:inline-block">Cipher Chat</span>
+          <span className="font-bold text-lg hidden sm:inline-block">Orbit</span>
         </Link>
         
         <div className="flex items-center space-x-2">

@@ -1,4 +1,4 @@
-# Cipher Chat
+# Orbit
 
 A polished, production-ready anonymous chat application built with Next.js 14, Tailwind CSS, and Pusher.
 
